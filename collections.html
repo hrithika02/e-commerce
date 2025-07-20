@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce</title>
+
+  <!--My style sheet-->
+  <link rel="stylesheet" href="style.css">
+
+  <!--Font awesome cdn-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!--Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!--Navbar-->
+  <nav class="nav">
+    <div class="nav_s1">
+      <i class="fa-solid fa-magnifying-glass nav_s1_1" style="color: rgb(204, 121, 139);"></i>
+      <i class="fa-solid fa-bars nav_s1_2" onclick="toggleMenu()" style="color: #cc798b;"></i>
+
+    </div>
+    <div class="nav_s2">
+      Impressions
+    </div>
+    <div class="nav_s3">
+      <div class="nav_s3_1">
+        <i class="fa-solid fa-user" style="color: #cc798b;"></i>
+        <a href="#login-popup" id="open-login">login</a>
+      </div>
+      <div class="nav_s3_2">
+        <h1><i class="fa-solid fa-cart-shopping" style="color: #cc798b;"></i></h1>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="#newarrival">New Arrival</a>
+    <a href="#mostwanted">Most wanted</a>
+    <a href="collections.html">Collection</a>
+    <a href="contact.html">Contact us</a>
+    <span class="close-menu" onclick="toggleMenu()">X</span>
+  </div>
+
+  <!--Section-->
+  <div class="section">
+    <a href="index.html">Home</a>
+    <a href="#newarrival">New Arrival</a>
+    <a href="#mostwanted">Most wanted</a>
+    <a href="collections.html">Collection</a>
+    <a href="contact.html">Contact us</a>
+  </div>
+
+  <!-- Filter Hamburger Icon -->
+  <i class="fa-solid fa-filter filter-icon" onclick="toggleFilter()" style="color: #cc798b;"></i>
+
+  <!--grid container-->
+  <div class="gridcontainer">
+    <div class="g1" id="filterMenu">
+      <span class="close-filter" onclick="toggleFilter()">×</span>
+      <h1>Category</h1>
+      <div display="flex"><input type="checkbox" onclick="filterImages('women')"> Women</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('men')"> Men</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('kids')"> Kids</div><br>
+      <h1>Outfits</h1>
+      <div display="flex"><input type="checkbox" onclick="filterImages('top')"> Tops</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('dress')"> Dresses</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('jean')"> Jeans</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('bottom')"> Bottoms</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('shirt')"> Shirts</div><br>
+      <h1>Colors</h1>
+      <div display="flex"><input type="checkbox" onclick="filterImages('black')"> Black</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('white')"> White</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('white')"> White</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('white')"> White</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('maroon')"> Maroon</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('blue')"> Blue</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('green')"> Green</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('brown')"> Brown</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('pastel')"> Pastel</div><br>
+      <h1>Price</h1>
+      <div display="flex"><input type="checkbox" onclick="filterImages('500')"> Under ₹500</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('1000')"> ₹500 - ₹1000</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('1500')"> ₹1000 - ₹1500</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('2000')"> ₹1500 & above</div><br>
+      <h1>Brands</h1>
+      <div display="flex"><input type="checkbox" onclick="filterImages('h&m')"> H&M</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('zara')"> ZARA</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('adidas')"> Adidas</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('levis')"> Levis</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('fab')"> FabIndia</div><br>
+      <div display="flex"><input type="checkbox" onclick="filterImages('biba')"> Biba</div><br>
+    </div>
+    <div class="g2">
+      <input type="text" placeholder="search" style="width: 100%; padding: 5px; margin: 10px;">
+      <div class="collections men shirt white pastel 1000 h&m"><img src="./images/c3.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Cream Drift <span style="margin-left: 20px;">4.0
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹659</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections shirt men white 1000 zara"><img src="./images/c2.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Urban Lines<span style="margin-left: 20px;">4.2
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹729</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections men shirt pastel white 1000 levis"><img src="./images/c1.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Soft Beige Fold<span style="margin-left: 20px;">4.5
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹920</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections women dress maroon brown 1000 zara"><img src="./images/n1.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Café Knit Dress<span style="margin-left: 20px;">4.2
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹799</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections women dress maroon brown 1000 biba"><img src="./images/n2.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Mocha Muse<span style="margin-left: 20px;">4.0
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹659</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections women dress pastel 1000 zara"><img src="./images/n3.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Ruched Rosé<span style="margin-left: 20px;">4.1
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹699</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections men shirts green pastel 1000 adidas"><img src="./images/n8.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Olive Ease<span style="margin-left: 20px;">4.4
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹889</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections men shirt blue black 1000 h&m"><img src="./images/n10.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Midnight Stree<span style="margin-left: 20px;">4.0
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹720</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections men shirt blue pastel 1000 zara"><img src="./images/n9.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Denim Breeze<span style="margin-left: 20px;">3.9
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹659</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections women top pastel 1000 zara" style="padding-top:35px;"><img src="./images/c4.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Blush Blocks<span style="margin-left: 20px;">4.0
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹559</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections women tops white pastel 1000 h&m"><img src="./images/c5.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Cherry Whisp<span style="margin-left: 20px;">3.8
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹659</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections women tops green pastel 1000 adidas"><img src="./images/c6.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Sage Petal<span style="margin-left: 20px;">4.0
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹659</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections men shirt maroon brown levis 500"><img src="./images/c7.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Latte Stripes<span style="margin-left: 20px;">4.0
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹499</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections men shirt green pastel 1000 h&m"><img src="./images/c8.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Mint Line-Up<span style="margin-left: 20px;">4.3
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹779</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections men shirt green pastel 1000 adidas"><img src="./images/c9.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Seafoam Calm<span style="margin-left: 20px;">3.7
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹700</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections women tops dress white 500 h&m"><img src="./images/c11.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Buttercup Bloom<span style="margin-left: 20px;">4.0
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹459</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections women tops maroon white brown 500 zara"><img src="./images/o4.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Patch Vibe<span style="margin-left: 20px;">4.2
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹429</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections women tops maroon brown 1000 levis"><img src="./images/c12.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Clay Casual<span style="margin-left: 20px;">3.9
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹559</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections kids dress maroon brown pastel 1000 zara"><img src="./images/c13.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Beige Breeze Set<span style="margin-left: 20px;">4.0
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹959</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections kids dress white 1000 levis"><img src="./images/c14.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Cotton Cloud Co-ord<span style="margin-left: 20px;">4.2
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹729</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections kids dress white 1000 biba"><img src="./images/c15.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Tropical Tiny Shirt<span style="margin-left: 20px;">4.4
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹529</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections kids dress white green 500 levis"><img src="./images/c16.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Penguin Pocket Set<span style="margin-left: 20px;">4.5
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹450</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections kids dress white 500 h&m"><img src="./images/c17.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Ruffle Cream Dress<span style="margin-left: 20px;">4.0
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹399</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections kids dress blue 500 zara"><img src="./images/c18.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Sky Pinstripe Dress<span style="margin-left: 20px;">3.7
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹499</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections kids dress green pastel 500 biba"><img src="./images/c19.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Mint Puff Dress<span style="margin-left: 20px;">4.7
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹299</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections kids dress white 500 levis"><img src="./images/c20.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Blossom Bow Frock<span style="margin-left: 20px;">4.6
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹359</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections men bottom jean blue 1000 levis" style="gap: 3px; padding-top: 0;"><img
+          src="./images/c21.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Classic Boy Denim<span style="margin-left: 20px;">4.0
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹759</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections men bottom jean blue black 1500 zara"><img src="./images/c22.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Charcoal Cool Jeans<span style="margin-left: 20px;">4.2
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹1299</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections men bottom jean blue 1500 adidas"><img src="./images/c23.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Urban Sky Blue Fit<span style="margin-left: 20px;">4.3
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹1129</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections men bottom jean blue 1000 adidas"><img src="./images/c24.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Washed Street Denim<span style="margin-left: 20px;">3.9
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹999</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections women bottom jean black 1500 biba"><img src="./images/l1.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Rugged Black Cargos<span style="margin-left: 20px;">4.1
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹1029</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections women bottom jean blue 1500 zara"><img src="./images/l3.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Torn Chic Light Wash<span style="margin-left: 20px;">4.2
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹1359</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+      <div class="collections women bottom jean blue 2000 h&m"><img src="./images/l4.jpg" alt="">
+        <i class="fa-solid fa-heart heart-icon"></i>
+        <p>Deep Indigo Flares<span style="margin-left: 20px;">4.7
+            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+          </span></p>
+        <p>₹1629</p>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column logo">
+        <h1><em>Impressions</em></h1>
+      </div>
+
+      <div class="footer-column">
+        <ul>
+          <li>Shop All</li>
+          <li>Our Story</li>
+          <li>Our Craft</li>
+          <li>Gift Card</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <ul>
+          <li>FAQ</li>
+          <li>Shipping & Returns</li>
+          <li>Store Policy</li>
+          <li>Payment Methods</li>
+          <li>Stockists</li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <ul>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Twitter</li>
+          <li>Pinterest</li>
+        </ul>
+      </div>
+
+      <div class="footer-column newsletter">
+        <h2>JOIN US!</h2>
+        <label>Email *</label>
+        <input type="email" placeholder="Enter your email" required>
+        <div class="checkbox-group">
+          <input type="checkbox" id="subscribe">
+          <label for="subscribe">Yes, subscribe me to your newsletter. *</label>
+        </div>
+        <button>Send</button>
+      </div>
+
+  </footer>
+
+  <script>
+    function filterImages(category) {
+      const products = document.querySelectorAll('.collections');
+
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+      const activeFilters = Array.from(checkboxes)
+        .map(checkbox => checkbox.getAttribute('onclick').match(/'([^']+)'/)[1]);
+
+      products.forEach(product => {
+        if (category === 'all' || activeFilters.length === 0) {
+          product.style.display = 'block';
+        } else {
+          const hasAnyClass = activeFilters.some(filter => product.classList.contains(filter));
+          product.style.display = hasAnyClass ? 'block' : 'none';
+        }
+      });
+    }
+    document.querySelectorAll('.heart-icon').forEach(icon => {
+      icon.addEventListener('click', () => {
+        icon.classList.toggle('active');
+      });
+    });
+
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      if (menu.style.right === "0px") {
+        menu.style.right = "-100%";
+      } else {
+        menu.style.right = "0px";
+      }
+    }
+    function toggleFilter() {
+      const menu = document.getElementById("filterMenu");
+      menu.classList.toggle("open");
+    }
+
+
+  </script>
+
+
+
+</body>
+
+</html>

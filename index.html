@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+
+    <!--My style sheet-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--Font awesome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!--Promo Offer-->
+    <div class="promo-offer" id="promoOffer">
+        <p>🔥 <strong>Special Offer:</strong> <em>Get 20% off on all items!</em> Use code <code>VIBE20</code></p>
+        <span class="promo-close" onclick="closePromo()">×</span>
+    </div>
+
+    <!--login-->
+    <div id="login-popup" class="login-overlay" style="display: none;">
+        <div class="login-box">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" required />
+            <input type="password" placeholder="Password" required />
+            <button>Login</button>
+            <span class="close-login">&times;</span>
+        </div>
+    </div>
+
+
+    <!--Navbar-->
+    <nav class="nav">
+        <div class="nav_s1">
+            <i class="fa-solid fa-magnifying-glass nav_s1_1" style="color: rgb(204, 121, 139);"></i>
+            <!--<i class="fa-solid fa-bars nav_s2_2" style="color: #cc798b;"></i>-->
+            <!-- Add inside .nav_s1 -->
+<i class="fa-solid fa-bars nav_s1_2" onclick="toggleMenu()" style="color: #cc798b;"></i>
+
+
+        </div>
+        <div class="nav_s2">
+            Impressions
+        </div>
+        <div class="nav_s3">
+            <div class="nav_s3_1">
+                <i class="fa-solid fa-user" style="color: #cc798b;"></i>
+                <a href="#login-popup" id="open-login">login</a>
+            </div>
+            <div class="nav_s3_2">
+                <h1><i class="fa-solid fa-cart-shopping" style="color: #cc798b;"></i></h1>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="#newarrival">New Arrival</a>
+    <a href="#mostwanted">Most wanted</a>
+    <a href="collections.html">Collection</a>
+    <a href="contact.html">Contact us</a>
+    <span class="close-menu" onclick="toggleMenu()">×</span>
+</div>
+
+    <!--Section-->
+    <div class="section">
+        <a href="index.html">Home</a>
+        <a href="#newarrival">New Arrival</a>
+        <a href="#mostwanted">Most wanted</a>
+        <a href="collections.html">Collection</a>
+        <a href="contact.html">Contact us</a>
+    </div>
+
+    <!--firstlook-->
+    <div class="firstlook">
+        <div class="overlay"></div>
+        <h1>Wear your vibe. Own the day.</h1>
+        <a href="#" class="cta-button">Shop the collection</a>
+    </div>
+
+    <!--Best seller-->
+    <div class="container">
+        <h1>--Best Sellers--</h1>
+        <div class="BestSeller">
+            <div class="img1 card">
+                <img src="./images/img1.jpg" alt="">
+                <div class="hover-text">Get this fit</div>
+            </div>
+            <div class="img2 card">
+                <img src="./images/img3.jpg" alt="">
+                <div class="hover-text">Get this fit</div>
+            </div>
+            <div class="img3 card">
+                <img src="./images/img9.jpg" alt="">
+                <div class="hover-text">Get this fit</div>
+            </div>
+            <div class="img5 card">
+                <img src="./images/img5.jpg" alt="">
+                <div class="hover-text">Get this fit</div>
+            </div>
+            <div class="img4 card">
+                <img src="./images/img10.jpg" alt="">
+                <div class="hover-text">Get this fit</div>
+            </div>
+            <div class="img6 card">
+                <img src="./images/img2.jpg" alt="">
+                <div class="hover-text">Get this fit</div>
+            </div>
+            <div class="img7 card">
+                <img src="./images/img7.jpg" alt="">
+                <div class="hover-text">Get this fit</div>
+            </div>
+        </div>
+    </div>
+
+    <!--brands-->
+    <div class="brands">
+        <h1>Brands</h1>
+        <div class="brands_container">
+            <img src="./images/b1.png" alt="">
+            <img src="./images/b2.png" alt="">
+            <img src="./images/b3.png" alt="">
+            <img src="./images/b5.png" alt="">
+            <img src="./images/b6.png" alt="">
+        </div>
+    </div>
+
+    <!--New arrival-->
+    <div class="newarrival" id="newarrival">
+        <h1>New Arrival</h1>
+        <div class="align">
+            <button class="scroll-button left-btn" onclick="scrollImages('newcontainer', -1)">&#8592;</button>
+            <div class="new" id="newcontainer">
+                <div class="newcard"><img src="./images/n1.jpg" alt="">
+                    <p>Ruched Bodycon Dress</p>
+                    <p>₹1199</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="newcard"><img src="./images/n8.jpg" alt="">
+                    <p>Casual Oversized Shirt</p>
+                    <p>₹1299</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="newcard"><img src="./images/n3.jpg" alt="">
+                    <p>Ruched Sleeveless Dress</p>
+                    <p>₹1499</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="newcard"><img src="./images/n9.jpg" alt="">
+                    <p>Summer Button-Up Shirt</p>
+                    <p>₹999</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="newcard"><img src="./images/n5.jpg" alt="">
+                    <p>Contrast Collar Shirt Dress</p>
+                    <p>₹789</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="newcard"><img src="./images/n10.jpg" alt="">
+                    <p>Contrast navy Bottom-up</p>
+                    <p>₹1359</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+            <button class="scroll-button right-btn" onclick="scrollImages('newcontainer', 1)">&#8594;</button>
+        </div>
+    </div>
+
+    <!--Most wanted-->
+    <div class="mostwanted" id="mostwanted">
+        <h1>Most wanted</h1>
+
+        <!-- Tops Section -->
+        <div class="align">
+            <button class="scroll-button left-btn" onclick="scrollImages('topContainer', -1)">&#8592;</button>
+            <div class="tops" id="topContainer">
+                <div class="tcard"><img src="./images/o1.jpg" alt="">
+                    <P>Graphic Crop Tee – Maroon Orbit</P>
+                    <P>₹499</P>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="tcard"><img src="./images/o7.jpg" alt="">
+                    <p>Button-Up Shirt – Sky Blue </p>
+                    <p>₹899</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="tcard"><img src="./images/o3.jpg" alt="">
+                    <p>Split Graphic Tee – Florida 1958</p>
+                    <p>₹559</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="tcard"><img src="./images/o8.jpg" alt="">
+                    <p>Plaid Overshirt – Grey White</p>
+                    <p>₹999</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="tcard"><img src="./images/o5.jpg" alt="">
+                    <p>Wrap Crop Top – Mocha Beige</p>
+                    <p>₹659</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="tcard"><img src="./images/o6.jpg" alt="">
+                    <p>College Print Tee – Brooklyn Green</p>
+                    <p>₹459</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+            <button class="scroll-button right-btn" onclick="scrollImages('topContainer', 1)">&#8594;</button>
+        </div>
+
+        <!-- Bottoms Section -->
+        <div class="align">
+            <button class="scroll-button left-btn" onclick="scrollImages('bottomContainer', -1)">&#8592;</button>
+            <div class="bottom" id="bottomContainer">
+                <div class="bcard"><img src="./images/l1.jpg" alt="">
+                    <p>Washed Black Cargo Jeans – Vintage Fade</p>
+                    <p>₹1129</p><button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="bcard"><img src="./images/l7.jpg" alt="">
+                    <p>Utility Cargo Pants – Sandstone Beige</p>
+                    <p>₹899</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="bcard"><img src="./images/l3.jpg" alt="">
+                    <p>Distressed Wide-Leg Jeans – Light Wash</p>
+                    <p>₹1299</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="bcard"><img src="./images/l8.jpg" alt="">
+                    <p>Utility Trousers – Olive Green bottom</p>
+                    <p>₹779</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="bcard"><img src="./images/l4.jpg" alt="">
+                    <p>Embroidered Flare Jeans – Deep Indigo</p>
+                    <p>₹1500</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="bcard"><img src="./images/l6.jpg" alt="">
+                    <p>Wide-Leg Cargo Pants – Cocoa Brown</p>
+                    <p>₹999</p>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+            <button class="scroll-button right-btn" onclick="scrollImages('bottomContainer', 1)">&#8594;</button>
+        </div>
+
+        <!--offer-->
+        <div class="offer">
+            <img src="./images/offer.jpg" alt="">
+            <div class="offer_sec">
+                <h1>Limited Offer</h1>
+                <p>35% OFF on this for first 30 Customers</p>
+                <button class="buy-now-btn">Shop Now -></button>
+            </div>
+        </div>
+
+        <!--Message-->
+        <div class="msg">
+            <p>Chat</p>
+            <i class="fa-solid fa-comments"></i>
+        </div>
+
+        <!--footer-->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-column logo">
+                    <h1><em>Impressions</em></h1>
+                </div>
+
+                <div class="footer-column">
+                    <ul>
+                        <li>Shop All</li>
+                        <li>Our Story</li>
+                        <li>Our Craft</li>
+                        <li>Gift Card</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <ul>
+                        <li>FAQ</li>
+                        <li>Shipping & Returns</li>
+                        <li>Store Policy</li>
+                        <li>Payment Methods</li>
+                        <li>Stockists</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                        <li>Pinterest</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column newsletter">
+                    <h2>JOIN US!</h2>
+                    <label>Email *</label>
+                    <input type="email" placeholder="Enter your email" required>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="subscribe">
+                        <label for="subscribe">Yes, subscribe me to your newsletter. *</label>
+                    </div>
+                    <button>Send</button>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js">
+        </script>
+
+
+</body>
+
+</html>
